@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom' //imported to route from one page to another
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+import Users from './User /pages/Users';
+import NewPlace from './places/pages/place';
+
+
+const App = () =>{
+
+  return(
+
+    <Router> {/* Router started here*/} 
+      <Switch> {/* Switch used to chose either of these paths*/}
+        <Route path = "/" exact> {/* This only works if the path is EXACTLY "/" */} 
+          <Users />
+        </Route>
+
+        <Route path = "/Places/new" exact> {/* This only works if the path is EXACTLY "/" */} 
+          <NewPlace />
+        </Route>
+        <Redirect to = "/" />{/* component in the react dom package that automatically redirects to whatever path listed */}
+      </Switch> 
+    </Router>
+  )
+}
 export default App;
