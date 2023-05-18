@@ -1,8 +1,8 @@
 import React from "react";
 import "./usersList.css";
-import userItem from "./userItem";
+import UserItem from "./UserItem";
 
-const usersList = (props) => {
+const UsersList = (props) => {
   if (props.items.length === 0) {
     return (
       <div className="center">
@@ -14,7 +14,7 @@ const usersList = (props) => {
   return (
     <ul className="users-list">
       {props.items.map((user) => (
-        <userItem
+        <UserItem
           key={user.id}
           id={user.id}
           image={user.image}
@@ -26,4 +26,4 @@ const usersList = (props) => {
   );
 };
 
-export default usersList;
+export default UsersList;
