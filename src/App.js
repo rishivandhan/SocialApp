@@ -9,6 +9,7 @@ import "./App.css";
 
 import Users from "./User /pages/Users";
 import NewPlace from "./places/pages/place";
+import UserPlaces from "./places/pages/UserPlaces";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
@@ -25,6 +26,9 @@ const App = () => {
             {" "}
             {/* This only works if the path is EXACTLY "/" */}
             <Users />
+          </Route>
+          <Route path="/:userID/places" exact>
+            <UserPlaces />
           </Route>
           <Route path="/Places/new" exact>
             {" "}
